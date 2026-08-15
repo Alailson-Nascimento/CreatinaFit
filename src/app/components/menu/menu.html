@@ -1,0 +1,34 @@
+<nav class="menu">
+  <div class="logo">
+    <h2>CreatinaFit</h2>
+    <span>Academia</span>
+  </div>
+
+  <div class="usuario">
+    <strong>{{ servicoAutenticacao.getUsuarioLogado()?.nome }}</strong>
+    <span>{{ servicoAutenticacao.getUsuarioLogado()?.tipo }}</span>
+  </div>
+
+  <div class="links">
+    <a routerLink="/dashboard"> 📊 Dashboard </a>
+
+    @if (servicoAutenticacao.getUsuarioLogado()?.tipo === 'admin') {
+      <a routerLink="/alunos"> 👥 Alunos </a>
+    }
+
+    @if (
+      servicoAutenticacao.getUsuarioLogado()?.tipo === 'admin' ||
+      servicoAutenticacao.getUsuarioLogado()?.tipo === 'instrutor'
+    ) {
+      <a routerLink="/turmas"> 🏋️ Turmas </a>
+    }
+
+    @if (servicoAutenticacao.getUsuarioLogado()?.tipo === 'admin') {
+      <a routerLink="/planos"> 💳 Planos </a>
+    }
+
+    <a routerLink="/checkin"> ✅ Check-in </a>
+  </div>
+
+  <button class="botao-sair" (click)="sair()">🚪 Sair</button>
+</nav>

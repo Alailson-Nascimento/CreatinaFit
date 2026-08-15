@@ -1,0 +1,29 @@
+<div class="checkin-container">
+  <header class="pagina-header">
+    <h2>Check-in</h2>
+  </header>
+
+  @if (mensagem()) {
+    <p class="mensagem" [class.mensagem-erro]="mensagemTipo() === 'erro'">
+      {{ mensagem() }}
+    </p>
+  }
+
+  <div class="lista-alunos">
+    @for (aluno of alunos; track aluno.id) {
+      <div class="linha-checkin">
+        <span class="nome-aluno">{{ aluno.nome }}</span>
+
+        <select #turmaSelect class="select-turma">
+          @for (turma of turmas; track turma.id) {
+            <option [value]="turma.id">{{ turma.modalidade }} - {{ turma.horario }}</option>
+          }
+        </select>
+
+        <button class="botao-primario" (click)="fazerCheckin(aluno.id, +turmaSelect.value)">
+          Check-in
+        </button>
+      </div>
+    }
+  </div>
+</div>

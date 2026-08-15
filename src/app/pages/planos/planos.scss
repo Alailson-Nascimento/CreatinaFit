@@ -1,0 +1,49 @@
+@use '../../../styles' as *;
+
+.planos-container {
+  padding: 2rem;
+}
+
+.pagina-header {
+  margin-bottom: 1.5rem;
+  h2 {
+    margin: 0;
+    color: $cor-texto;
+  }
+}
+
+.cards-planos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-plano {
+  background: white;
+  padding: 1.5rem;
+  border-radius: $raio-borda;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+
+  h3 {
+    margin: 0 0 0.5rem;
+    color: $cor-texto;
+  }
+
+  .valor {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $cor-primaria;
+    margin: 0.5rem 0;
+  }
+
+  .detalhe {
+    color: $cor-texto-secundario;
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+  }
+}

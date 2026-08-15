@@ -1,0 +1,144 @@
+@use '../../../styles' as *;
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.layout app-menu {
+  display: block;
+  flex: 0 0 240px;
+  width: 240px;
+}
+
+.dashboard-container {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem;
+  background: $cor-fundo;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    color: $cor-texto;
+    margin: 0;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+
+  &-texto {
+    color: $cor-texto;
+
+    strong {
+      color: $cor-primaria;
+    }
+  }
+}
+
+.cards-indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: $raio-borda;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  &-valor {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $cor-primaria;
+  }
+
+  &-label {
+    font-size: 0.85rem;
+    color: $cor-texto-secundario;
+  }
+}
+
+.card-alerta .card-valor {
+  color: #dc2626;
+}
+
+.graficos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grafico-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: $raio-borda;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h3 {
+    margin-top: 0;
+    color: $cor-texto;
+    font-size: 1rem;
+  }
+
+  canvas {
+    width: 100% !important;
+    max-height: 280px;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .layout app-menu {
+    width: 100%;
+    min-width: 100%;
+    flex: none;
+  }
+
+  .dashboard-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cards-indicadores {
+    grid-template-columns: 1fr;
+  }
+
+  .graficos-grid {
+    grid-template-columns: 1fr;
+  }
+}

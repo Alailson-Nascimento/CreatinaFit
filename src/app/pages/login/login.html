@@ -1,0 +1,21 @@
+<div class="login-container">
+  <form [formGroup]="formulario" (ngSubmit)="entrar()" class="login-form">
+    <div class="logo">
+      <span class="logo-icone">🏋️</span>
+      <span class="logo-texto">Creatina<strong>Fit</strong></span>
+    </div>
+    <p class="subtitulo">Entre com suas credenciais</p>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" placeholder="seu@email.com" />
+
+    <label for="senha">Senha</label>
+    <input id="senha" type="password" formControlName="senha" placeholder="••••••" />
+
+    @if (mensagemErro) {
+      <p class="erro">{{ mensagemErro }}</p>
+    }
+
+    <button type="submit">Entrar</button>
+  </form>
+</div>

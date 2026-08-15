@@ -1,0 +1,52 @@
+<div class="alunos-container">
+  <header class="pagina-header">
+    <h2>Alunos</h2>
+    <button class="botao-primario" (click)="alternarFormulario()">
+      {{ mostrarFormulario() ? 'Cancelar' : '+ Novo Aluno' }}
+    </button>
+  </header>
+
+  @if (mostrarFormulario()) {
+    <form [formGroup]="formulario" (ngSubmit)="cadastrarAluno()" class="form-cadastro">
+      <input formControlName="nome" placeholder="Nome do aluno" />
+      <input formControlName="email" placeholder="Email" type="email" />
+      <select formControlName="planoId">
+        @for (plano of planos; track plano.id) {
+          <option [value]="plano.id">{{ plano.nome }}</option>
+        }
+      </select>
+      <button type="submit" class="botao-primario">Salvar</button>
+    </form>
+  }
+
+  @if (alunos().length === 0) {
+    <p class="estado-vazio">Nenhum aluno cadastrado ainda.</p>
+  } @else {
+    <table class="tabela-alunos">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Plano</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (aluno of alunos(); track aluno.id) {
+          <tr>
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.email }}</td>
+            <td>{{ aluno.nomePlano }}</td>
+            <td>
+              @if (aluno.vencido) {
+                <span class="badge badge-vencido">Vencido</span>
+              } @else {
+                <span class="badge badge-ok">Em dia</span>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

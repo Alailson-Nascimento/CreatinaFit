@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+$cor-primaria: #e60c30;
+$cor-primaria-escura: #b8092a;
+$cor-texto: #0a0a0a;
+$cor-texto-secundario: #6b7280;
+$cor-fundo: #f8f9fb;
+$cor-borda: #d1d5db;
+$cor-erro: #dc2626;
+$fonte-padrao: Arial, Helvetica, sans-serif;
+$raio-borda: 8px;
+$breakpoint-mobile: 768px;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $fonte-padrao;
+}

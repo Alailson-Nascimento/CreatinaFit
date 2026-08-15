@@ -1,0 +1,38 @@
+<div class="turmas-container">
+  <header class="pagina-header">
+    <h2>Turmas</h2>
+  </header>
+
+  @if (turmas().length === 0) {
+    <p class="estado-vazio">Nenhuma turma cadastrada ainda.</p>
+  } @else {
+    <table class="tabela-turmas">
+      <thead>
+        <tr>
+          <th>Modalidade</th>
+          <th>Instrutor</th>
+          <th>Dia</th>
+          <th>Horário</th>
+          <th>Vagas</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (turma of turmas(); track turma.id) {
+          <tr>
+            <td>{{ turma.modalidade }}</td>
+            <td>{{ turma.nomeInstrutor }}</td>
+            <td>{{ turma.diaSemana }}</td>
+            <td>{{ turma.horario }}</td>
+            <td>
+              @if (turma.vagasDisponiveis === 0) {
+                <span class="badge badge-vencido">Lotada</span>
+              } @else {
+                <span class="badge badge-ok">{{ turma.vagasDisponiveis }} vagas</span>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

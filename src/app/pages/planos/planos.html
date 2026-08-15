@@ -1,0 +1,16 @@
+<div class="planos-container">
+  <header class="pagina-header">
+    <h2>Planos</h2>
+  </header>
+
+  <div class="cards-planos">
+    @for (plano of planos; track plano.id) {
+      <div class="card-plano">
+        <h3>{{ plano.nome }}</h3>
+        <p class="valor">R$ {{ plano.valor }}</p>
+        <p class="detalhe">{{ plano.duracaoEmDias }} dias</p>
+        <p class="detalhe">{{ plano.aulasPorSemana }}x por semana</p>
+      </div>
+    }
+  </div>
+</div>

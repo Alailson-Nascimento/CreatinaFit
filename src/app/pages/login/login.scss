@@ -1,0 +1,86 @@
+@use '../../../styles' as *;
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $cor-fundo;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+
+  &-icone {
+    font-size: 1.7rem;
+  }
+
+  &-texto {
+    color: $cor-texto;
+
+    strong {
+      color: $cor-primaria;
+    }
+  }
+}
+
+.login-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+
+  .subtitulo {
+    margin: 0 0 1.5rem;
+    color: $cor-texto-secundario;
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 0.85rem;
+    margin-bottom: 0.35rem;
+    color: #374151;
+  }
+
+  input {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid $cor-borda;
+    border-radius: $raio-borda;
+    font-size: 1rem;
+
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+    }
+  }
+
+  .erro {
+    color: $cor-erro;
+    font-size: 0.85rem;
+    margin: -0.5rem 0 1rem;
+  }
+
+  button {
+    padding: 0.8rem;
+    background-color: $cor-primaria;
+    color: white;
+    border: none;
+    border-radius: $raio-borda;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $cor-primaria-escura;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use '../../../styles' as *;
+
+.turmas-container {
+  padding: 2rem;
+}
+
+.pagina-header {
+  margin-bottom: 1.5rem;
+  h2 {
+    margin: 0;
+    color: $cor-texto;
+  }
+}
+
+.estado-vazio {
+  text-align: center;
+  color: $cor-texto-secundario;
+  padding: 3rem;
+}
+
+.tabela-turmas {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: $raio-borda;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  th {
+    background: #fafafa;
+    font-size: 0.85rem;
+    color: $cor-texto-secundario;
+  }
+}
+
+.badge {
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+
+  &-ok {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+  &-vencido {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .tabela-turmas {
+    display: block;
+    overflow-x: auto;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .pagina-header {
+    text-align: center;
+  }
+}

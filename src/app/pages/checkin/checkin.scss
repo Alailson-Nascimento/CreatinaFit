@@ -1,0 +1,83 @@
+@use '../../../styles' as *;
+
+.checkin-container {
+  padding: 2rem;
+}
+
+.pagina-header {
+  margin-bottom: 1.5rem;
+  h2 {
+    margin: 0;
+    color: $cor-texto;
+  }
+}
+
+.mensagem {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 0.8rem 1.2rem;
+  border-radius: $raio-borda;
+  margin-bottom: 1.5rem;
+
+  &-erro {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+}
+
+.lista-alunos {
+  background: white;
+  border-radius: $raio-borda;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.linha-checkin {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f1f1;
+
+  .nome-aluno {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .select-turma {
+    padding: 0.5rem;
+    border: 1px solid $cor-borda;
+    border-radius: $raio-borda;
+  }
+
+  .botao-primario {
+    background: $cor-primaria;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: $raio-borda;
+    cursor: pointer;
+
+    &:hover {
+      background: $cor-primaria-escura;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .pagina-header {
+    text-align: center;
+  }
+
+  .select-turma {
+    width: 100%;
+  }
+
+  .botao-primario {
+    width: 100%;
+  }
+}
