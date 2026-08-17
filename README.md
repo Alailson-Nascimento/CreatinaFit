@@ -75,7 +75,7 @@ npm test
 ## 🔗 Links
 
 - **Repositório:** https://github.com/Alailson-Nascimento/CreatinaFit
-- **Deploy (Netlify):** _[adicionar link após deploy]_
+- **Deploy (Netlify):** https://creatinafit.netlify.app/login
 
 ## 👤 Autor
 
